@@ -1,0 +1,4 @@
+<input class="form-control" type="text" placeholder="Search by Name.." [(ngModel)]="search">
+<div class="card border-primary mb-3" *ngFor="let employee of getSearchName(search)">
+   <app-display-employee  [employee]="employee"></app-display-employee>
+</div>

@@ -1,0 +1,13 @@
+<div class="card border-primary mb-3">
+    <div class="card-header bg-primary">
+        <h4 class="card-title">Edit Employee</h4>
+    </div>
+    <div class="card-body">
+       <app-form  [employee]="employee" #form></app-form>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary" (click)="saveEmployee()"
+            [disabled]="form.employeeForm.invalid">Save</button>
+            
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.imageClass {
+    max-width: 80% ;
+}
+.pointerCursor {
+    cursor: pointer;
+}
+button {
+    margin:0 5px;
+    height: 38px;
+    width: 66px;
+
+}

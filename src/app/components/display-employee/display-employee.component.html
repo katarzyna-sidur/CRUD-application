@@ -1,0 +1,83 @@
+<div class="card-header bg-primary pointerCursor" (click)="panelExpanded = !panelExpanded">
+    <h4 class="card-title">{{employee?.name}}</h4>
+</div>
+<div class="card-body" *ngIf="panelExpanded">
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="imageClass" [src]="employee.photoPath" />
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        Gender:
+                    </div>
+                    <div class="col-md-6">
+                        {{employee?.gender}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        Date of Birth:
+                    </div>
+                    <div class="col-md-6">
+                        {{employee?.dateOfBirth | date}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        Contact Preferance:
+                    </div>
+                    <div class="col-md-6">
+                        {{employee?.contactPreference}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        Phone:
+                    </div>
+                    <div class="col-md-6">
+                        {{employee?.phoneNumber}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        Email:
+                    </div>
+                    <div class="col-md-6">
+                        {{employee?.email}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        Department:
+                    </div>
+                    <div class="col-md-6">
+                        {{employee?.department}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        Is Active:
+                    </div>
+                    <div class="col-md-6">
+                        {{employee?.isActive}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="card-footer" *ngIf="panelExpanded">
+    <button type="button" class="btn btn-primary" (click)="viewEmployee()">View</button>
+    <button type="button" class="btn btn-primary" (click)="editEmployee()">Edit</button>
+    <span *ngIf="confirmDelete">
+        <span>Are you sure you want to delete ?</span>
+        <button class="btn btn-danger" (click)="deleteEmployee()">Yes</button>
+        <button class="btn btn-primary" (click)="confirmDelete=false">No</button>
+    </span>
+    <span *ngIf="!confirmDelete">
+        <button type="button" class="btn btn-danger" (click)="confirmDelete=true">Delete</button>
+    </span>
+</div>
